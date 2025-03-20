@@ -9,8 +9,6 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
 // Get the latest 3 posts (or however many you want)
 const latestPosts = posts.slice(0, 3);
-console.log(posts)
-console.log('test')
 ---
 
 <MySiteLayout>
@@ -29,6 +27,5 @@ console.log('test')
           </li>
         ))}
       </ul>
-      <a href="/blog">View All Posts →</a>
     </section>
 	</MySiteLayout>
