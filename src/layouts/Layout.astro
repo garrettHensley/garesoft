@@ -6,6 +6,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Dev Blog</title>
+    <div class="container">
+      <div>
+        <a href="/" id="home-link">
+          garesoft
+        </a>
+      </div>
+      <article>
+        <slot />
+      </article>
+    </div>
     <style>
       :root {
         --bg-light: #F5ECE0;
@@ -22,6 +32,12 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        height: 100vh;
+      }
+
+      #home-link {
+        color: black;
+        text-decoration: none !important;
       }
 
       header {
@@ -50,7 +66,8 @@
       .container {
         max-width: 800px;
         margin: 2rem auto;
-        padding: 1rem;
+        padding: 3rem;
+        box-shadow: 3px 3px 3px 0px rgb(130, 124, 124);
       }
 
       .post {
@@ -59,38 +76,7 @@
         border-left: 5px solid var(--accent);
         margin-bottom: 1rem;
       }
-
-      footer {
-        text-align: center;
-        padding: 1rem;
-        background: var(--primary);
-        color: var(--text-light);
-        margin-top: 2rem;
-      }
     </style>
   </head>
-  <body>
-    <header>
-      <h1>My Dev Blog</h1>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <h2>Welcome to My Blog</h2>
-      <p>Sharing thoughts, tutorials, and tech insights.</p>
-    </section>
-
-    <div class="container">
-
-    </div>
-
-    <footer>
-      <p>&copy; {new Date().getFullYear()} My Dev Blog</p>
-    </footer>
-  </body>
 </html>
 
