@@ -19,16 +19,18 @@
     <style>
       :root {
         --bg-light: #F5ECE0;
-        --primary: #5F99AE;
-        --secondary: #336D82;
-        --accent: #693382;
-        --text-dark: #1E1E1E;
-        --text-light: #ffffff;
+        --primary: #494d7e;
+        --secondary: #8b6d9c;
+        --accent: #f2d3ab;
+        --text-dark: #272744;
+        --text-light: #fbf5ef;
       }
 
       html body {
-        background-color: var(--bg-light);
-        color: var(--text-dark);
+        background-image: url('/images/cobbletone.png');
+        background-repeat: repeat;
+        background-size: 9%;
+        color: var(--text-light);
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
@@ -37,7 +39,7 @@
       }
 
       #home-link {
-        color: black;
+        color: var(--text-light);
         text-decoration: none !important;
         font-size: 2rem;
         padding-bottom: 2rem;
@@ -51,6 +53,9 @@
         color: red;
       }
 
+      article {
+        background-color: var(--text-dark);
+      }
 
       nav a {
         color: var(--text-light);
@@ -73,7 +78,7 @@
 
       article {
         padding: 3rem;
-        border: solid var(--accent)
+        border: 17px ridge var(--accent);
       }
 
       .post {
