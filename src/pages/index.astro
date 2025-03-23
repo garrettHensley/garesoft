@@ -29,6 +29,9 @@ const latestPosts = posts.slice(0, 3);
         {latestPosts.map(post => (
           <li>
             <a href={`/blog/${post.id}/`}><h3>{post.data.title}</h3></a>
+            <div>
+              <img src={post.data.image} alt={post.data.title} loading="lazy" />
+            </div>
             <p>{post.data.description}</p>
           </li>
         ))}

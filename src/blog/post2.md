@@ -3,6 +3,7 @@
 title: "This Is My Temple"
 description: "A look at my game This Is My Temple. A number crunching dungeon crawler inspired by dark fantasy classics."
 date: "2025-03-22"
+image: "/images/castlerender.png"
 ---
 
 # This Is My Temple
