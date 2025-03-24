@@ -5,6 +5,12 @@ const { imageSrc } = Astro.props;
 ---
 <img id="post-preview" src={imageSrc} alt="Preview Image" loading="lazy" class="preview-image" />
 
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>
+
 <script>
 
 const postPreview = document.querySelector('#post-preview')
