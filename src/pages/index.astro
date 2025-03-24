@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import MySiteLayout from '../layouts/Layout.astro';
+import PreviewImage from '../components/PreviewImage.astro';
 
 const posts = await getCollection('blog');
 
@@ -30,7 +31,8 @@ const latestPosts = posts.slice(0, 3);
           <li>
             <a href={`/blog/${post.id}/`}><h3>{post.data.title}</h3></a>
             <div>
-              <img src={post.data.image} alt={post.data.title} loading="lazy" />
+
+              <PreviewImage imageSrc={post.data.image} />
             </div>
             <p>{post.data.description}</p>
           </li>
