@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+const { imageSrc } = Astro.props;
+// This component is used to display a preview image for blog posts
+---
+<img id="post-preview" src={imageSrc} alt="Preview Image" loading="lazy" class="preview-image" />
+
+<style>
+    img {
+        max-width: 100%;
+    }
+</style>
+
+<script>
+
+const postPreview = document.querySelector('#post-preview')
+if (postPreview) {
+    console.log(postPreview)
+    const imageSrc = postPreview.getAttribute('src');
+    console.log(imageSrc)
+    if (imageSrc) {
+        postPreview.style.display = 'block'; // Show the image if a source is provided
+    } else {
+        postPreview.style.display = 'none'; // Hide the image if no source is provided
+    }
+}
+
+
+
+</script>
