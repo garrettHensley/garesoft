@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# This is supposed to look like a 90s website
 
 ```sh
 bun create astro@latest -- --template basics
