@@ -6,8 +6,8 @@ date: "2025-03-22"
 image: "/images/castlerender.png"
 ---
 
-# This Is My Temple
-#### *A look at my game This Is My Temple. A number crunching dungeon crawler inspired by dark fantasy classics.*
+<!-- # This Is My Temple
+#### *A look at my game This Is My Temple. A number crunching dungeon crawler inspired by dark fantasy classics.* -->
 
 This Is My Temple is inspired by dark fantasy and dungeon crawler classics as well as traditional roguelikes.
 

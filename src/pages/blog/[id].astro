@@ -23,6 +23,11 @@ const { Content } = await render(post)
   <meta property="og:image" content={post.data.image} />
 </head>
 <MySiteLayout>
+  <h1>{post.data.title}</h1>
+  <div>
+    <img src={post.data.image} alt={post.data.title} loading="lazy" width="100%" />
+  </div>
+  <h4><em>{post.data.description}</em></h4>
   <Content />
   <div id="blog-controls">
     <div>
