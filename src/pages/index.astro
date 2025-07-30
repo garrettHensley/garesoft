@@ -1,38 +1,126 @@
 ---
-import { getCollection } from 'astro:content';
-import MySiteLayout from '../layouts/Layout.astro';
-import PreviewImage from '../components/PreviewImage.astro';
+import { getCollection } from "astro:content";
+import { Image } from 'astro:assets';
+import MySiteLayout from "../layouts/Layout.astro";
+import PreviewImage from "../components/PreviewImage.astro";
+import pyramidImage from "../assets/images/pyramid.gif";
 
-const posts = await getCollection('blog');
+const posts = await getCollection("blog");
 
 // Sort posts by date (newest first)
-posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
 
 // Get the latest 3 posts (or however many you want)
-const latestPosts = posts.slice(0,5);
+const latestPosts = posts.slice(0, 5);
 ---
 
 <MySiteLayout>
-    <header>
-      <h1 class="title">Welcome to My Blog</h1>
-      <p>Sharing thoughts, tutorials, and tech insights.</p>
-      <p>
-        <a href="https://bsky.app/profile/garesoft.dev" target="_blank">Chat with me on Bluesky</a>
-      </p>
-      <marquee>
-        <a href="https://bsky.app/profile/garesoft.dev" target="_blank">Chat with me on Bluesky</a>
-      </marquee>
-    </header>
+  <header>
+    <h1 class="title">
+      >> Initializing GARESOFT OS...
+      <Image src={pyramidImage} height=25 width=25 alt='icon'/>
+    </h1>
+    <p class=title>
+      :: Welcome, User. Terminal Access Granted.
+    </p>
+    <p>
+      I am creating This is My Temple, a dungeon crawling RPG inspired by the
+      classics.
+    </p>
+    <p>Sharing thoughts, tutorials, and tech insights.</p>
+    <marquee>
+      <a href="https://bsky.app/profile/garesoft.dev" target="_blank"
+        >Chat with me on Bluesky</a
+      >
+    </marquee>
+    <marquee direction="right">
+      <a href="https://www.tiktok.com/@garesoft" class="button">TikTok</a>
+    </marquee>
+  </header>
 
-    <section>
-      <h2>Latest Posts</h2>
-        {latestPosts.map(post => (
-            <a href={`/blog/${post.id}/`}><h3>{post.data.title}</h3></a>
+  <section>
+    {
+      latestPosts.map((post) => (
+        <article>
+          <a href={`/blog/${post.id}/`}>
+            <h3 style="margin: 0">{post.data.title}</h3>
             <div>
-
               <PreviewImage imageSrc={post.data.image} />
             </div>
-            <p>{post.data.description}</p>
-        ))}
-    </section>
-	</MySiteLayout>
+
+          </a>
+          <p style="margin-top: .2rem !important;">
+            {post.data.description}
+          </p>
+        </article>
+      ))
+    }
+  </section>
+  <hr />
+  <section>
+    <blockquote
+      class="tiktok-embed"
+      cite="https://www.tiktok.com/@garesoft"
+      data-unique-id="garesoft"
+      data-embed-type="creator"
+      style="background-color: black !important;"
+    >
+      <section>
+        <a
+          target="_blank"
+          href="https://www.tiktok.com/@garesoft?refer=creator_embed"
+          >@garesoft</a
+        >
+      </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </section>
+</MySiteLayout>
+
+<style>
+  header {
+    background-color: black !important;
+    padding-top: .1rem;
+  }
+  header p {
+    margin: 0;
+    padding: 0.5rem 0;
+    background-color: black !important;
+  }
+  .title {
+    font-family: 'Lucida Console';
+    color: red;
+  }
+  article {
+      border: 2px solid #fff;
+      border-right-color: #808080;
+      border-bottom-color: #808080;
+      background: #c0c0c0;
+
+    box-shadow:
+      inset -1px -1px 0 #000,
+      inset 1px 1px 0 #fff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  article a {
+    text-decoration: none;
+    color: gainsboro;
+  }
+
+  article p {
+    color: black;
+  }
+
+  article h3 {
+    margin: 0;
+    background-color: darkblue;
+  }
+
+  article div {
+    margin: auto;
+    text-align: center;
+  }
+</style>

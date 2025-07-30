@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Dev Blog</title>
     <div class="container">
@@ -12,9 +12,9 @@
           garesoft
         </a>
       </div>
-      <article>
+      <main>
         <slot />
-      </article>
+      </main>
     </div>
     <style>
       :root {
@@ -31,7 +31,6 @@
         background-repeat: repeat;
         background-size: 9%;
         color: var(--text-light);
-        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         height: 100vh;
@@ -49,11 +48,8 @@
         margin-bottom: .5rem;
       }
 
-      header h1 {
-        color: red;
-      }
 
-      article {
+      main {
         background-color: var(--text-dark);
       }
 
@@ -76,7 +72,7 @@
         margin: 2rem auto;
       }
 
-      article {
+      main {
         padding: 3rem;
         border: 17px ridge var(--accent);
       }
